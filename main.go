@@ -14,6 +14,9 @@ func main() {
 	case 1:
 		return
 	case 2:
+		if os.Args[1] == "" {
+			return
+		}
 		stackA := ReadArgs()
 		if stackA == nil {
 			fmt.Println("Error")
