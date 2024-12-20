@@ -22,7 +22,7 @@ func main() {
 			fmt.Println("Error")
 			return
 		}
-		fmt.Println(solver.Solve(stackA))
+		fmt.Println(solver.SortStack(stackA))
 	default:
 		fmt.Println("Error")
 	}
