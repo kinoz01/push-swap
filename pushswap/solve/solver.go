@@ -55,7 +55,7 @@ func SortStack(stackA *[]int) {
 	for len(a) != 3 {
 		min, index := GetMin(a)
 		proximity := len(a) / 2
-		if proximity >= index {
+		if proximity > index {
 			for min != a[0] {
 				if min == a[1] && a[0]-1 == min {
 					sa(a)
