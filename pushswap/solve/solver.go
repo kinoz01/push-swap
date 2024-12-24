@@ -54,8 +54,8 @@ func SortStack(stackA *[]int) {
 	b := make([]int, 0, 100)
 	for len(a) != 3 {
 		min, index := GetMin(a)
-		proximity := len(a) / 2
-		if proximity > index {
+		half := len(a) / 2
+		if half >= index {
 			for min != a[0] {
 				if min == a[1] && a[0]-1 == min {
 					sa(a)
@@ -76,7 +76,7 @@ func SortStack(stackA *[]int) {
 	for len(b) != 0 {
 		pa(&a, &b)
 	}
-	// fmt.Println(a)
+	// fmt.Println(a) // sorted stack A
 }
 
 func GetMin(a []int) (int, int) {

@@ -3,15 +3,13 @@ package solver
 import "fmt"
 
 func pa(a, b *[]int) {
-	*a = append(*a, (*b)[0])
-	reverse(*a)
+	*a = append([]int{(*b)[0]}, *a...)
 	*b = (*b)[1:]
 	fmt.Println("pa")
 }
 
 func pb(a, b *[]int) {
-	*b = append(*b, (*a)[0])
-	reverse(*b)
+	*b = append([]int{(*a)[0]}, *b...)
 	*a = (*a)[1:]
 	fmt.Println("pb")
 }
@@ -33,10 +31,4 @@ func rra(a []int) {
 		a[i], a[i-1] = a[i-1], a[i]
 	}
 	fmt.Println("rra")
-}
-
-func reverse(a []int) {
-	for i := len(a) - 1; i > 0; i-- {
-		a[i], a[i-1] = a[i-1], a[i]
-	}
 }
